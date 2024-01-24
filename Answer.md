@@ -12,8 +12,7 @@ Les images occupent toute la largeur de l'écran car les colonnes flexibles s'ad
 ## Exercice 2
 Explication du Modificateur : 
 
-
-```swift
+```
 extension Image {
     // Définition d'une nouvelle fonction 'centerCropped' pour l'extension de 'Image'.
     func centerCropped() -> some View {
@@ -27,5 +26,32 @@ extension Image {
                 .clipped() // Coupe l'image pour s'adapter au cadre, en supprimant les parties qui dépassent.
         }
     }
-}```
+}
 
+
+
+
+Cette extension Image ajoute la fonction centerCropped à toutes les instances de Image dans SwiftUI. Elle permet à une image de se redimensionner pour remplir entièrement l'espace disponible, tout en préservant son ratio d'aspect. Les parties de l'image qui débordent du cadre défini sont rognées.
+Personnellement, moi, j'ai tout compris grâce à ça car mes images se rentraient dedans et c'était vraiment moche. Après avoir analysé ça, les images se sont bien positionnées.
+
+# Appel Réseau
+
+## Exercice 3
+
+async/await :
+
+C'est une nouveauté de Swift 5.5 qui simplifie l'écriture de fonctions asynchrones. Le code ressemble beaucoup à une séquence synchrone, ce qui le rend plus clair et facile à suivre. Il intègre une gestion naturelle des erreurs avec les blocs do/catch.
+
+Combine : 
+
+Combine est un outil puissant pour gérer des flux de données asynchrones. Il est parfait pour créer des interactions complexes basées sur des séquences d'événements, offrant ainsi une approche plus réactive à la programmation.
+
+completionHandler et GCD
+completionHandler : C'est une approche classique où vous passez une fonction (le completionHandler) à une autre fonction. Cette fonction est appelée une fois l'opération asynchrone terminée.
+GCD : Grand Central Dispatch permet de gérer la concurrence de manière bas niveau. Il offre un contrôle précis sur l'exécution asynchrone, mais peut complexifier le code.
+
+Différences : 
+
+async/await brille par sa simplicité et sa lisibilité, contrairement à GCD et completionHandler qui peuvent alourdir le code.
+Combine se concentre sur la programmation réactive pour gérer des scénarios où de multiples flux de données interagissent.
+GCD donne un contrôle fin sur les opérations asynchrones, mais avec une complexité accrue.
